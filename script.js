@@ -20,7 +20,8 @@ clearButton.addEventListener('click', () => {
 });
 
 // Add event listener to the 'Check' button
-checkButton.addEventListener('click', () => {
+checkButton.addEventListener('click', (event) => {
+  event.preventDefault(); // Prevent default form submission
   // Reset message area classes at the beginning
   messageArea.classList.remove('message-success', 'message-error');
 
