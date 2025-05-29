@@ -2,10 +2,14 @@ h1 {
   font-family: Arial, sans-serif;
   font-size: 26px;
   color: blue;
+  text-align: center;
 }
 
 form {
   margin-top: 20px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 label {
@@ -53,6 +57,20 @@ div { /* FU Logo Placeholder */
 }
 
 #messageArea {
-  margin-top: 20px;
   font-family: Arial, sans-serif;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 10px;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+body {
+  text-align: center;
+  padding-bottom: 50px; /* Adjusted to prevent overlap with the fixed banner */
 }
