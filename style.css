@@ -74,3 +74,15 @@ body {
   text-align: center;
   padding-bottom: 50px; /* Adjusted to prevent overlap with the fixed banner */
 }
+
+/* Success message styling */
+#messageArea.message-success {
+  background-color: #4CAF50; /* Green */
+  color: #FFFFFF; /* White */
+}
+
+/* Error message styling */
+#messageArea.message-error {
+  background-color: #f44336; /* Red */
+  color: #FFFFFF; /* White */
+}
