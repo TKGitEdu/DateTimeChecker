@@ -16,10 +16,14 @@ clearButton.addEventListener('click', () => {
 
   // Clear message area
   messageArea.textContent = '';
+  messageArea.classList.remove('message-success', 'message-error');
 });
 
 // Add event listener to the 'Check' button
 checkButton.addEventListener('click', () => {
+  // Reset message area classes at the beginning
+  messageArea.classList.remove('message-success', 'message-error');
+
   const dayStr = dayInput.value;
   const monthStr = monthInput.value;
   const yearStr = yearInput.value;
@@ -27,11 +31,20 @@ checkButton.addEventListener('click', () => {
   // Empty Input Check
   if (dayStr === '' || monthStr === '' || yearStr === '') {
     messageArea.textContent = "Data input is required.";
+    messageArea.classList.add('message-error'); // Style as error
     return; // Do not proceed if any input is empty
   }
 
   // Call Validation
   const validationResult = validateDate(dayStr, monthStr, yearStr);
+
+  // Apply new class based on validation
+  if (validationResult.isValid) {
+    messageArea.classList.add('message-success');
+  } else {
+    messageArea.classList.add('message-error');
+  }
+
   messageArea.textContent = validationResult.message;
 });
 
@@ -42,6 +55,7 @@ closeFormButton.addEventListener('click', () => {
     monthInput.value = '';
     yearInput.value = '';
     messageArea.textContent = '';
+    messageArea.classList.remove('message-success', 'message-error');
   }
 });
 
